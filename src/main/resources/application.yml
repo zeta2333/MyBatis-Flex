@@ -3,6 +3,9 @@ spring:
         url: jdbc:mysql://${app.database.port}/${app.database.name}?${app.database.options}
         username: ${app.database.username}
         password: ${app.database.password}
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
 app:
     database:
         port: localhost:3306

@@ -1,9 +1,12 @@
 package usts.pycro.mybatisflex.entity;
 
+import com.mybatisflex.annotation.ColumnAlias;
 import com.mybatisflex.annotation.Id;
 import com.mybatisflex.annotation.KeyType;
 import com.mybatisflex.annotation.Table;
 import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * @author Pycro
@@ -12,10 +15,12 @@ import lombok.Data;
  */
 @Data
 @Table("tb_book")
-public class Book {
+public class Book implements Serializable {
     @Id(keyType = KeyType.Auto)
+    @ColumnAlias("bookId")
     private Long id;
     private Long accountId;
+    @ColumnAlias("bookTitle")
     private String title;
     private String content;
 }
