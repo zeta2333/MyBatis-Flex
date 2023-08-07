@@ -99,7 +99,7 @@ class MyBatisFlexApplicationTests {
     }
 
     @Test
-    public void testChain() {
+    public void testChain1() {
         System.out.println(QueryChain.of(accountMapper)
                 .select(
                         ACCOUNT.ALL_COLUMNS,
@@ -160,6 +160,16 @@ class MyBatisFlexApplicationTests {
                                         .where(BOOK.ACCOUNT_ID.eq(account.getId())))
         );
         System.out.println(JSON.toJSONString(accounts));
+    }
+
+    @Test
+    public void testChain2() {
+        List<Account> accountList = QueryChain.of(accountMapper)
+                .select(ACCOUNT.ALL_COLUMNS)
+                .from(ACCOUNT)
+                .where(ACCOUNT.ID.ge(1))
+                .list();
+        accountList.forEach(System.out::println);
     }
 }
 
