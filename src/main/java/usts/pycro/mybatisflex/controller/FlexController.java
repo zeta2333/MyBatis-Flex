@@ -33,7 +33,7 @@ public class FlexController {
         List<Account> list = accountService.queryChain()
                 .select(ACCOUNT.DEFAULT_COLUMNS)
                 .from(ACCOUNT)
-                .where(ACCOUNT.ID.ge(id))
+                .where(ACCOUNT.ID.eq(id))
                 .list();
         return list;
     }

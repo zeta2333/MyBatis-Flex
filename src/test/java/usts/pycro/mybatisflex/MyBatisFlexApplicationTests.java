@@ -48,6 +48,16 @@ class MyBatisFlexApplicationTests {
     }
 
     @Test
+    public void testInsert() {
+        Account account = new Account();
+        Account mqk = UpdateWrapper.of(account)
+                .set(ACCOUNT.USER_NAME, "mqk")
+                .set(Account::getAge, 22).toEntity();
+        int res = accountMapper.insert(mqk);
+        System.out.println(res);
+    }
+
+    @Test
     public void testCustomizeQuery() {
         Account account = accountMapper.selectByName("张三");
         System.out.println(account);

@@ -40,7 +40,7 @@
         <dependency>
             <groupId>com.mybatis-flex</groupId>
             <artifactId>mybatis-flex-spring-boot-starter</artifactId>
-            <version>1.5.4</version>
+            <version>1.6.8</version>
         </dependency>
         <dependency>
             <groupId>com.mysql</groupId>
@@ -80,7 +80,7 @@
                         <path>
                             <groupId>com.mybatis-flex</groupId>
                             <artifactId>mybatis-flex-processor</artifactId>
-                            <version>1.5.4</version>
+                            <version>1.6.8</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
